@@ -84,6 +84,23 @@ aa2d079b783ba4412c894ae3ed6529ab94d6337b43469bdc7c04f2f9b3cafeff  kuake-quarkclo
 - `baidu-baidunetdisk`：无特殊要求。
 - `kuake-quarkclouddrive`：夸克对境外出口有风控，走代理会报 `1007` 或 TLS 断开。**执行夸克操作前必须切国内直连**；仅下载本仓库分发包时可走代理。
 
+## 网盘镜像
+
+GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使用）。
+
+| 平台 | 链接 | 提取码 | 有效期配置 | 检查日期 |
+|-|-|-|-|-|
+| 夸克网盘 | https://pan.quark.cn/s/952398a7a629 | 8RDT | 永久（`expired_type=1`） | 2026-11-26 |
+| 百度网盘 | https://pan.baidu.com/s/17iudwvb6pGWCJjZPYEnEpA | uuys | 永久（`period=0`） | 2026-11-26 |
+
+两个镜像目录均含上述三个包的同一版本，与 GitHub 上的文件逐字节一致。
+
+验证记录（2026-11-26）：
+
+- 夸克：`share-detail` 返回 `code=0`、`file_num=3`、`expired_type=1`、`expired_at=4102416000000`；首文件 `kuake-quarkclouddrive-v1.0.3.zip` 14,376 B。
+- 百度：156 账号真实转存成功，转存后三个文件大小与源包一致（98,124 / 14,376 / 16,142），验证后已清理。
+- 「永久」只代表当前配置为永久且当前可访问，不代表平台承诺永久保留。复查时重新执行上述两项验证并更新检查日期。
+
 ## 迁移说明
 
 `kuake-quarkclouddrive` 早期发布在独立仓库 `joe216533/kuake-quarkclouddrive`。自 v1.0.3 起统一收录到本仓库，旧仓库与旧直链保持只读不删，确保既有安装不受影响。
