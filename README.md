@@ -44,12 +44,37 @@ https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/
 |-|-|-|-|-|
 | `baidu-baidunetdisk` | v1.1.0 | `baidu-baidunetdisk-v1.1.0.zip` | 98,124 | 新增 `rename` 重命名；转存/上传/分享/删除/配额/校验全量能力 |
 | `kuake-quarkclouddrive` | v1.0.3 | `kuake-quarkclouddrive-v1.0.3.zip` | 14,376 | 上传/下载/分享/转存/批量重命名；本仓库为迁移收录，内容与旧仓库逐字节一致 |
+| `workbuddy-keep-agent` | v1.0.0 | `workbuddy-keep-agent-v1.0.0.zip` | 16,142 | 技能启动自检模块；与官方技能包隔离，包内零凭据 |
+
+`workbuddy-keep-agent` 不是独立技能，而是被技能调用的**启动前置自检模块**。它不进夸克、百度等官方技能目录，官方包一行不改，官方升级不会覆盖它。配置与状态固定在 `~/.workbuddy/keep-agent/`，代码重装不丢历史。
+
+## 启动自检的接入方式
+
+技能在每天第一次被调用时，先执行一次自检，再执行用户请求：
+
+```bash
+node <keep-agent安装目录>/keep.cjs run --platform quark
+node <keep-agent安装目录>/keep.cjs run --platform baidu
+```
+
+退出码 `0` 通过、`4` 未通过、`5` 执行异常。**未通过时只提示，不阻断业务**——自检是前置检查，不是新的单点故障。
+
+首次使用需生成配置：
+
+```bash
+mkdir -p ~/.workbuddy/keep-agent
+cp config.example.json ~/.workbuddy/keep-agent/config.json
+node keep.cjs init
+```
+
+包内只有 `config.example.json` 模板，不含分享链接、提取码与账号令牌。
 
 ## 校验
 
 ```text
 aa2d079b783ba4412c894ae3ed6529ab94d6337b43469bdc7c04f2f9b3cafeff  kuake-quarkclouddrive-v1.0.3.zip
 17f453dce9ce65d440c50acff9cb21c34ae1b0615ab35d4d038cd597c437d933  baidu-baidunetdisk-v1.1.0.zip
+08c68e12a5196ec01767df7b81717a2e2a97fc6ac8687fd8fb759c7776504f13  workbuddy-keep-agent-v1.0.0.zip
 ```
 
 安装方必须下载后核对 SHA256，与本表或同目录 `.sha256` 文件一致才可安装。
