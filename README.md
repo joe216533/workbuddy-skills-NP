@@ -43,7 +43,7 @@ https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/
 | 技能 ID | 版本 | 文件 | 字节数 | 说明 |
 |-|-|-|-|-|
 | `baidu-baidunetdisk` | v1.1.1 | `baidu-baidunetdisk-v1.1.1.zip` | 115,385 | **内置启动自检**（每天首次调用自动真实转存）；含 rename；上传/下载/分享/转存/删除/配额/校验全量能力 |
-| `kuake-quarkclouddrive` | v1.0.3 | `kuake-quarkclouddrive-v1.0.3.zip` | 14,376 | 上传/下载/分享/转存/批量重命名；本仓库为迁移收录，内容与旧仓库逐字节一致 |
+| `kuake-quarkclouddrive` | v1.0.4 | `kuake-quarkclouddrive-v1.0.4.zip` | 31,872 | **内置启动自检**（每天首次调用前执行真实转存）；上传/下载/分享/转存/批量重命名 |
 | `workbuddy-keep-agent` | v1.0.0 | `workbuddy-keep-agent-v1.0.0.zip` | 16,142 | 技能启动自检模块；与官方技能包隔离，包内零凭据 |
 
 `workbuddy-keep-agent` 是自检模块的**独立分发形态，非必需**。自技能包 v1.1.1 起，百度与夸克两个技能包已各自内置自检，**装技能包即自带，不需要再单独安装本包**。本包仅用于两种情况：在一处统一调度多平台自检，或在不安装技能包的机器上单独跑自检。配置与状态固定在 `~/.workbuddy/keep-agent/`，三个包共用同一份配置，重装任何一方都不丢历史。
@@ -75,6 +75,7 @@ node keep.cjs init
 
 ```text
 aa2d079b783ba4412c894ae3ed6529ab94d6337b43469bdc7c04f2f9b3cafeff  kuake-quarkclouddrive-v1.0.3.zip
+1e20ae384fb669c7dc6f7baf54e90a5d0b997c0170956d0fe2ee87e97eb36439  kuake-quarkclouddrive-v1.0.4.zip
 17f453dce9ce65d440c50acff9cb21c34ae1b0615ab35d4d038cd597c437d933  baidu-baidunetdisk-v1.1.0.zip
 a8b25c9058b226b83fcfd64ead3409fd730e14b9ae209a22f0e23e523aeb3c41  baidu-baidunetdisk-v1.1.1.zip
 08c68e12a5196ec01767df7b81717a2e2a97fc6ac8687fd8fb759c7776504f13  workbuddy-keep-agent-v1.0.0.zip
