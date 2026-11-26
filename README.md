@@ -94,7 +94,7 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 
 | 平台 | 链接 | 提取码 | 有效期配置 | 检查日期 |
 |-|-|-|-|-|
-| 夸克网盘 | https://pan.quark.cn/s/952398a7a629 | 8RDT | 永久（`expired_type=1`） | 2026-11-26 |
+| 夸克网盘 | https://pan.quark.cn/s/28b6368ad71a | 5gPn | 永久（`expired_type=1`） | 2026-11-27 |
 | 百度网盘 | https://pan.baidu.com/s/17iudwvb6pGWCJjZPYEnEpA | uuys | 永久（`period=0`） | 2026-11-26 |
 
 两个镜像目录均含上述三个包的同一版本，与 GitHub 上的文件逐字节一致。
