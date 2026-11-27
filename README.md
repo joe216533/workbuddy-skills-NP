@@ -160,3 +160,17 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 | 网盘 | https://pan.quark.cn/s/2d9511222522 （永久无码，159 发布） |
 
 验收：T1/T2/T3/T4/T5/T8 通过（含双 GPT 并发不串台）；T6 换机独立性待另一台电脑验证，不阻塞本版发布。详见包内 README.md。
+
+## feishu-readwrite v1.0.0（2026-11-27 新增）
+
+| 项 | 值 |
+|-|-|
+| 版本 | v1.0.0 |
+| 包 | `feishu-readwrite-v1.0.0.zip`（16,202 B） |
+| SHA256 | `74b7b67e1c06576fce826b6f956eccc3aff73d4b3c42569c85acfa2124105c20` |
+| Tag | `feishu-readwrite-v1.0.0` |
+| 主链 | https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/feishu-readwrite-v1.0.0/packages/feishu-readwrite/v1.0.0/feishu-readwrite-v1.0.0.zip |
+| 备链 | https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@feishu-readwrite-v1.0.0/packages/feishu-readwrite/v1.0.0/feishu-readwrite-v1.0.0.zip |
+| 网盘 | https://pan.quark.cn/s/005012dc4c9b （永久无码） |
+
+验收：F1–F8 自检连续两次 PASS；Docs/Base/Sheets 真实新建、读取、更新、改名、回读均通过。详见包内 README.md。
