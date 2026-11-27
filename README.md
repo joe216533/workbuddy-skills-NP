@@ -146,3 +146,17 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 ## 许可
 
 底层 CLI 由各技能在安装时从其官方地址现取，本仓库仅分发技能包本体。第三方组件声明见各技能包内的 `LICENSES/THIRD-PARTY-NOTICES.md`。
+
+## browser-cli-dual-vpn v1.0.0（2026-11-27 新增）
+
+| 项 | 值 |
+|-|-|
+| 版本 | v1.0.0 |
+| 包 | `browser-cli-dual-vpn-v1.0.0.zip`（28,956 B） |
+| SHA256 | `cfb9f0906c0783609e4c3d116606740290ac966d653ba266ce0416581c23e749` |
+| Tag | `browser-cli-dual-vpn-v1.0.0` |
+| 主链 | https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/browser-cli-dual-vpn-v1.0.0/packages/browser-cli-dual-vpn/v1.0.0/browser-cli-dual-vpn-v1.0.0.zip |
+| 备链 | https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@browser-cli-dual-vpn-v1.0.0/packages/browser-cli-dual-vpn/v1.0.0/browser-cli-dual-vpn-v1.0.0.zip |
+| 网盘 | https://pan.quark.cn/s/2d9511222522 （永久无码，159 发布） |
+
+验收：T1/T2/T3/T4/T5/T8 通过（含双 GPT 并发不串台）；T6 换机独立性待另一台电脑验证，不阻塞本版发布。详见包内 README.md。
