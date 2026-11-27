@@ -23,7 +23,7 @@ Tag 规范：`<SKILL_ID>-v<VERSION>`，例如 `baidu-baidunetdisk-v1.1.0`。
 
 ```text
 请根据这个直链下载并安装 baidu-baidunetdisk 技能，并自动完成环境检查、依赖准备和安装验证：
-https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.2/packages/baidu-baidunetdisk/v1.2.2/baidu-baidunetdisk-v1.2.2.zip
+https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.3/packages/baidu-baidunetdisk/v1.2.3/baidu-baidunetdisk-v1.2.3.zip
 ```
 
 直链模板：
@@ -38,11 +38,13 @@ https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/<SKILL_ID>-v<VER
 https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/packages/<SKILL_ID>/v<VERSION>/<SKILL_ID>-v<VERSION>.zip
 ```
 
+> 若 `cdn.jsdelivr.net` 打不开或连接被重置，把域名换成 `fastly.jsdelivr.net`，后面路径完全不变即可（2026-11-27 实测：cdn 主机在部分大陆出口出现 301 后重置，fastly 正常，两者内容逐字节一致）。
+
 ## 当前版本
 
 | 技能 ID | 版本 | 文件 | 字节数 | 说明 |
 |-|-|-|-|-|
-| `baidu-baidunetdisk` | v1.2.2 | `baidu-baidunetdisk-v1.2.2.zip` | 117,190 | **真实云端保存自检**（159 发布 / 156 保存，包内默认测试资源 + 状态机）；含 rename；自检 CLI 路径修复 |
+| `baidu-baidunetdisk` | v1.2.3 | `baidu-baidunetdisk-v1.2.3.zip` | 119,250 | **真实云端保存自检**；含 rename；修复 `selfcheck --force` 假阳性（参数被丢弃）与归档改名误报 |
 | `kuake-quarkclouddrive` | v1.1.2 | `kuake-quarkclouddrive-v1.1.2.zip` | 33,780 | **真实云端保存自检**（159 发布永久无码分享 / 156 保存，状态机）；上传/下载/分享/转存；**修复自检 CLI 路径少一级导致借用他人账号的缺陷** |
 | `workbuddy-keep-agent` | v1.0.0 | `workbuddy-keep-agent-v1.0.0.zip` | 16,142 | 技能启动自检模块；与官方技能包隔离，包内零凭据 |
 
@@ -101,6 +103,7 @@ a8b25c9058b226b83fcfd64ead3409fd730e14b9ae209a22f0e23e523aeb3c41  baidu-baidunet
 3baff825dfa74b10f173ae3baa4531723cbbf584213f25352c126b86ef107b34  baidu-baidunetdisk-v1.2.0.zip
 4fd3553a55ee335042c836c7303ce6fe2e1c9c4c425b116f8c23585132ff7a08  baidu-baidunetdisk-v1.2.1.zip
 35dc5931b83090753eaa59febee9911cd9b537a5489f3cf7d9821e883dfeeb07  baidu-baidunetdisk-v1.2.2.zip
+9a9303427224b2d37c9800a765110604e4d32061d8d3bf6eb0506e8456ed2414  baidu-baidunetdisk-v1.2.3.zip
 08c68e12a5196ec01767df7b81717a2e2a97fc6ac8687fd8fb759c7776504f13  workbuddy-keep-agent-v1.0.0.zip
 ```
 
@@ -120,13 +123,14 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 | 夸克网盘 | https://pan.quark.cn/s/79ebe32e752c | 无（公开链接） | 永久且无提取码（`url_type=1`、`expired_type=1`），159 发布 | 2026-11-27 |
 | 百度网盘 | https://pan.baidu.com/s/1rOHfvkfgi2T42-r2zYrMXg | n37d | 永久（`period=0`），159 发布 | 2026-11-27 |
 
-两个镜像均含本次推荐的两个包：`baidu-baidunetdisk-v1.2.2.zip`（117,190 B）、`kuake-quarkclouddrive-v1.1.2.zip`（33,780 B），与 GitHub 上的文件逐字节一致。
+两个镜像均含本次推荐的两个包：`baidu-baidunetdisk-v1.2.3.zip`（119,250 B）、`kuake-quarkclouddrive-v1.1.2.zip`（33,780 B），与 GitHub 上的文件逐字节一致。百度镜像是**文件夹分享**，换版只替换目录内文件，链接不变。
 
-验证记录（2026-11-27，v1.2.2 / v1.1.2）：
+验证记录（2026-11-27，v1.2.3 / v1.1.2）：
 
 - 账号关系：**159 发布、156 保存**。镜像分享均由 159 创建，156 账号做真实转存/下载验证。
 - 夸克：以 156 视角 `share-detail` 返回 `code=0`、`url_type=1`（无提取码）、`expired_type=1`（永久）、`file_num=2`、`is_owner=0`；两个文件大小 117,190 B / 33,780 B。
-- 百度：156 账号真实转存整个镜像文件夹成功，再逐个下载，本地独立复算 SHA256 与 GitHub 包一致（`35dc5931…eeb07` / `995dc5a6…74558f`）。
+- 百度：156 账号真实转存整个镜像文件夹成功，再逐个下载，本地独立复算 SHA256 与 GitHub 包一致（`9a930342…ed2414` / `995dc5a6…74558f`）。
+- v1.2.3 自检实测（包内 CLI 直接调用）：`selfcheck --force` 真实执行（真实转存 12.2s，退出码 0）；连续两次 `--force` 归档改名均成功（撞名自动加后缀，退到时间戳）；不带 `--force` 正确命中当天去重返回 `DONE_TODAY`；68/68 测试通过。
 - GitHub 四条直链（raw ×2 + jsDelivr ×2）全部 200，回验哈希与包内一致。
 - 「永久」只代表当前配置为永久且当前可访问，不代表平台承诺永久保留。复查时重新执行上述验证并更新检查日期。
 - 旧镜像分享（夸克 `96eff8d1a3d3`、百度 `1OQrhdlLPkIxxG5cyNS5KNA`）已不再出现在本表中；两家 CLI 均不提供取消分享的命令（夸克无该命令、百度 `/share/1` 列表接口已下线返回 404），需在网页端手动取消。
