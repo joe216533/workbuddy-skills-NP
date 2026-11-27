@@ -38,7 +38,7 @@ https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/<SKILL_ID>-v<VER
 https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/packages/<SKILL_ID>/v<VERSION>/<SKILL_ID>-v<VERSION>.zip
 ```
 
-> 若 `cdn.jsdelivr.net` 打不开或连接被重置，把域名换成 `fastly.jsdelivr.net`，后面路径完全不变即可（2026-11-27 实测：cdn 主机在部分大陆出口出现 301 后重置，fastly 正常，两者内容逐字节一致）。
+> 若 `cdn.jsdelivr.net` 打不开或连接被重置，把域名换成 `fastly.jsdelivr.net`，后面路径完全不变即可（2026-11-27 实测：cdn 主机出现过偶发 301/连接重置，稍后自行恢复；fastly 当时始终正常，两者内容逐字节一致。属于节点网络波动，不是 tag 未生效）。
 
 ## 当前版本
 
