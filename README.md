@@ -23,7 +23,7 @@ Tag 规范：`<SKILL_ID>-v<VERSION>`，例如 `baidu-baidunetdisk-v1.1.0`。
 
 ```text
 请根据这个直链下载并安装 baidu-baidunetdisk 技能，并自动完成环境检查、依赖准备和安装验证：
-https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.0/packages/baidu-baidunetdisk/v1.2.0/baidu-baidunetdisk-v1.2.0.zip
+https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.1/packages/baidu-baidunetdisk/v1.2.1/baidu-baidunetdisk-v1.2.1.zip
 ```
 
 直链模板：
@@ -42,8 +42,8 @@ https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/
 
 | 技能 ID | 版本 | 文件 | 字节数 | 说明 |
 |-|-|-|-|-|
-| `baidu-baidunetdisk` | v1.2.0 | `baidu-baidunetdisk-v1.2.0.zip` | 116,808 | **内置真实云端保存自检**（包内默认独立测试资源 + 状态机）；含 rename；上传/下载/分享/转存/删除/配额/校验全量能力 |
-| `kuake-quarkclouddrive` | v1.1.0 | `kuake-quarkclouddrive-v1.1.0.zip` | 33,345 | **内置真实云端保存自检**（包内默认永久无码分享 + 状态机）；上传/下载/分享/转存/批量重命名 |
+| `baidu-baidunetdisk` | v1.2.1 | `baidu-baidunetdisk-v1.2.1.zip` | 116,820 | **真实云端保存自检**（159 发布 / 156 保存，包内默认测试资源 + 状态机）；含 rename |
+| `kuake-quarkclouddrive` | v1.1.1 | `kuake-quarkclouddrive-v1.1.1.zip` | 33,356 | **真实云端保存自检**（159 发布永久无码分享 / 156 保存，状态机）；上传/下载/分享/转存 |
 | `workbuddy-keep-agent` | v1.0.0 | `workbuddy-keep-agent-v1.0.0.zip` | 16,142 | 技能启动自检模块；与官方技能包隔离，包内零凭据 |
 
 `workbuddy-keep-agent` 是自检模块的**独立分发形态，非必需**。自百度 v1.2.0、夸克 v1.1.0 起，两个技能包已各自内置完整自检，**装技能包即自带，不需要再单独安装本包**。本包仅用于两种情况：在一处统一调度多平台自检，或在不安装技能包的机器上单独跑自检。公开测试资源随技能包分发；本机私有配置与状态固定在 `~/.workbuddy/keep-agent/`，且不再是自检运行的必要条件。
@@ -94,9 +94,11 @@ node scripts/selfcheck.cjs force --json
 aa2d079b783ba4412c894ae3ed6529ab94d6337b43469bdc7c04f2f9b3cafeff  kuake-quarkclouddrive-v1.0.3.zip
 1e20ae384fb669c7dc6f7baf54e90a5d0b997c0170956d0fe2ee87e97eb36439  kuake-quarkclouddrive-v1.0.4.zip
 2106f1ec075547d905ff2b2cbfd2db4587355691510741b45065f370cfa40d09  kuake-quarkclouddrive-v1.1.0.zip
+9599a3d4670e13e7d1883f6f4ffd88577feb04a3b823a87c19514b36ad520f49  kuake-quarkclouddrive-v1.1.1.zip
 17f453dce9ce65d440c50acff9cb21c34ae1b0615ab35d4d038cd597c437d933  baidu-baidunetdisk-v1.1.0.zip
 a8b25c9058b226b83fcfd64ead3409fd730e14b9ae209a22f0e23e523aeb3c41  baidu-baidunetdisk-v1.1.1.zip
 3baff825dfa74b10f173ae3baa4531723cbbf584213f25352c126b86ef107b34  baidu-baidunetdisk-v1.2.0.zip
+4fd3553a55ee335042c836c7303ce6fe2e1c9c4c425b116f8c23585132ff7a08  baidu-baidunetdisk-v1.2.1.zip
 08c68e12a5196ec01767df7b81717a2e2a97fc6ac8687fd8fb759c7776504f13  workbuddy-keep-agent-v1.0.0.zip
 ```
 
@@ -113,15 +115,17 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 
 | 平台 | 链接 | 提取码 | 有效期配置 | 检查日期 |
 |-|-|-|-|-|
-| 夸克网盘 | https://pan.quark.cn/s/09719381cbc2 | 无（公开链接） | 永久且无提取码（`url_type=1`、`expired_type=1`） | 2026-11-27 |
-| 百度网盘 | https://pan.baidu.com/s/1DXhH-qCsQuFCWnMMjkUboQ | qhae | 永久（`period=0`） | 2026-11-27 |
+| 夸克网盘 | https://pan.quark.cn/s/96eff8d1a3d3 | 无（公开链接） | 永久且无提取码（`url_type=1`、`expired_type=1`），159 发布 | 2026-11-27 |
+| 百度网盘 | https://pan.baidu.com/s/1OQrhdlLPkIxxG5cyNS5KNA | ygei | 永久（`period=0`），159 发布 | 2026-11-27 |
 
-两个镜像目录均含本次推荐的两个包：`baidu-baidunetdisk-v1.2.0.zip`、`kuake-quarkclouddrive-v1.1.0.zip`，与 GitHub 上的文件逐字节一致。旧镜像链接保留只读，不再作为推荐安装入口。
+两个镜像目录均含本次推荐的两个包：`baidu-baidunetdisk-v1.2.1.zip`、`kuake-quarkclouddrive-v1.1.1.zip`，与 GitHub 上的文件逐字节一致。旧镜像链接已按老板要求撤销删除。
 
 验证记录（2026-11-27）：
 
-- 夸克：`share-detail` 返回 `code=0`、`file_num=2`、`url_type=1`、`expired_type=1`、`expired_at=4102416000000`；159 账号真实转存成功；下载回验 SHA256 与 GitHub 包一致。
-- 百度：159 账号真实转存成功，下载回验两个文件大小与 SHA256 均一致（116,808 B / 33,345 B）。
+- 账号关系：**159 发布、156 保存**。测试分享与镜像分享均由 159 创建，156 账号真实转存/下载验证通过。
+- 夸克：`share-detail` 返回 `code=0`、`url_type=1`、`expired_type=1`；156 账号真实转存成功；下载回验 SHA256 与 GitHub 包一致。
+- 百度：156 账号真实转存成功，下载回验两个文件大小与 SHA256 均一致（116,820 B / 33,356 B）。
+- 旧资源（156 发布的测试分享与镜像）已全部撤销，回读确认失效（夸克 41012、百度 -21）。
 - 「永久」只代表当前配置为永久且当前可访问，不代表平台承诺永久保留。复查时重新执行上述两项验证并更新检查日期。
 
 ## 迁移说明
