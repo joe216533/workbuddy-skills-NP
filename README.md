@@ -23,7 +23,7 @@ Tag 规范：`<SKILL_ID>-v<VERSION>`，例如 `baidu-baidunetdisk-v1.1.0`。
 
 ```text
 请根据这个直链下载并安装 baidu-baidunetdisk 技能，并自动完成环境检查、依赖准备和安装验证：
-https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.1.0/packages/baidu-baidunetdisk/v1.1.0/baidu-baidunetdisk-v1.1.0.zip
+https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.0/packages/baidu-baidunetdisk/v1.2.0/baidu-baidunetdisk-v1.2.0.zip
 ```
 
 直链模板：
@@ -42,11 +42,11 @@ https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/
 
 | 技能 ID | 版本 | 文件 | 字节数 | 说明 |
 |-|-|-|-|-|
-| `baidu-baidunetdisk` | v1.1.1 | `baidu-baidunetdisk-v1.1.1.zip` | 115,385 | **内置启动自检**（每天首次调用自动真实转存）；含 rename；上传/下载/分享/转存/删除/配额/校验全量能力 |
-| `kuake-quarkclouddrive` | v1.0.4 | `kuake-quarkclouddrive-v1.0.4.zip` | 31,872 | **内置启动自检**（每天首次调用前执行真实转存）；上传/下载/分享/转存/批量重命名 |
+| `baidu-baidunetdisk` | v1.2.0 | `baidu-baidunetdisk-v1.2.0.zip` | 116,808 | **内置真实云端保存自检**（包内默认独立测试资源 + 状态机）；含 rename；上传/下载/分享/转存/删除/配额/校验全量能力 |
+| `kuake-quarkclouddrive` | v1.1.0 | `kuake-quarkclouddrive-v1.1.0.zip` | 33,345 | **内置真实云端保存自检**（包内默认永久无码分享 + 状态机）；上传/下载/分享/转存/批量重命名 |
 | `workbuddy-keep-agent` | v1.0.0 | `workbuddy-keep-agent-v1.0.0.zip` | 16,142 | 技能启动自检模块；与官方技能包隔离，包内零凭据 |
 
-`workbuddy-keep-agent` 是自检模块的**独立分发形态，非必需**。自技能包 v1.1.1 起，百度与夸克两个技能包已各自内置自检，**装技能包即自带，不需要再单独安装本包**。本包仅用于两种情况：在一处统一调度多平台自检，或在不安装技能包的机器上单独跑自检。配置与状态固定在 `~/.workbuddy/keep-agent/`，三个包共用同一份配置，重装任何一方都不丢历史。
+`workbuddy-keep-agent` 是自检模块的**独立分发形态，非必需**。自百度 v1.2.0、夸克 v1.1.0 起，两个技能包已各自内置完整自检，**装技能包即自带，不需要再单独安装本包**。本包仅用于两种情况：在一处统一调度多平台自检，或在不安装技能包的机器上单独跑自检。公开测试资源随技能包分发；本机私有配置与状态固定在 `~/.workbuddy/keep-agent/`，且不再是自检运行的必要条件。
 
 因此**日常只需要装两个技能包**：`baidu-baidunetdisk` 与 `kuake-quarkclouddrive`。
 
@@ -70,32 +70,33 @@ SHA256：`c7c1fde0c4a762772d88709c72e7091b18c5b146c7807494b58abd35c69ef49b`
 
 ## 启动自检的接入方式
 
-技能在每天第一次被调用时，先执行一次自检，再执行用户请求：
+技能在每天第一次被调用时，先执行一次真实云端保存自检，再执行用户请求：
 
 ```bash
-node <keep-agent安装目录>/keep.cjs run --platform quark
-node <keep-agent安装目录>/keep.cjs run --platform baidu
+# 百度技能包
+node scripts/baidu-baidunetdisk.cjs selfcheck
+node scripts/baidu-baidunetdisk.cjs selfcheck --json
+
+# 夸克技能包
+node scripts/selfcheck.cjs
+node scripts/selfcheck.cjs force --json
 ```
+
+自检使用包内 `config.default.json` 中的公开测试资源：从独立测试资源账号转存 1KB 文件到当前授权账号，并核验本次云端文件。公开测试资源随包分发；本机私有配置只覆盖账号别名、CLI 路径与归档目录，且完全可选。
+
+最终状态：`PASS` / `FAIL` / `BLOCKED` / `NEEDS_AUTH` / `NEEDS_CONFIG` / `ERROR` / `NOT_RUN`。**不再有“未配置就静默跳过”。** 当天只有 `PASS` 会去重，其他状态允许条件变化后重试。
 
 退出码 `0` 通过、`4` 未通过、`5` 执行异常。**未通过时只提示，不阻断业务**——自检是前置检查，不是新的单点故障。
-
-首次使用需生成配置：
-
-```bash
-mkdir -p ~/.workbuddy/keep-agent
-cp config.example.json ~/.workbuddy/keep-agent/config.json
-node keep.cjs init
-```
-
-包内只有 `config.example.json` 模板，不含分享链接、提取码与账号令牌。
 
 ## 校验
 
 ```text
 aa2d079b783ba4412c894ae3ed6529ab94d6337b43469bdc7c04f2f9b3cafeff  kuake-quarkclouddrive-v1.0.3.zip
 1e20ae384fb669c7dc6f7baf54e90a5d0b997c0170956d0fe2ee87e97eb36439  kuake-quarkclouddrive-v1.0.4.zip
+2106f1ec075547d905ff2b2cbfd2db4587355691510741b45065f370cfa40d09  kuake-quarkclouddrive-v1.1.0.zip
 17f453dce9ce65d440c50acff9cb21c34ae1b0615ab35d4d038cd597c437d933  baidu-baidunetdisk-v1.1.0.zip
 a8b25c9058b226b83fcfd64ead3409fd730e14b9ae209a22f0e23e523aeb3c41  baidu-baidunetdisk-v1.1.1.zip
+3baff825dfa74b10f173ae3baa4531723cbbf584213f25352c126b86ef107b34  baidu-baidunetdisk-v1.2.0.zip
 08c68e12a5196ec01767df7b81717a2e2a97fc6ac8687fd8fb759c7776504f13  workbuddy-keep-agent-v1.0.0.zip
 ```
 
@@ -112,15 +113,15 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 
 | 平台 | 链接 | 提取码 | 有效期配置 | 检查日期 |
 |-|-|-|-|-|
-| 夸克网盘 | https://pan.quark.cn/s/edf1ae6623dd | 无（公开链接） | 永久且无提取码（`url_type=1`、`expired_type=1`） | 2026-11-27 |
-| 百度网盘 | https://pan.baidu.com/s/17iudwvb6pGWCJjZPYEnEpA | uuys | 永久（`period=0`） | 2026-11-26 |
+| 夸克网盘 | https://pan.quark.cn/s/09719381cbc2 | 无（公开链接） | 永久且无提取码（`url_type=1`、`expired_type=1`） | 2026-11-27 |
+| 百度网盘 | https://pan.baidu.com/s/1DXhH-qCsQuFCWnMMjkUboQ | qhae | 永久（`period=0`） | 2026-11-27 |
 
-两个镜像目录均含上述三个包的同一版本，与 GitHub 上的文件逐字节一致。
+两个镜像目录均含本次推荐的两个包：`baidu-baidunetdisk-v1.2.0.zip`、`kuake-quarkclouddrive-v1.1.0.zip`，与 GitHub 上的文件逐字节一致。旧镜像链接保留只读，不再作为推荐安装入口。
 
-验证记录（2026-11-26）：
+验证记录（2026-11-27）：
 
-- 夸克：`share-detail` 返回 `code=0`、`file_num=3`、`expired_type=1`、`expired_at=4102416000000`；首文件 `kuake-quarkclouddrive-v1.0.3.zip` 14,376 B。
-- 百度：156 账号真实转存成功，转存后三个文件大小与源包一致（98,124 / 14,376 / 16,142），验证后已清理。
+- 夸克：`share-detail` 返回 `code=0`、`file_num=2`、`url_type=1`、`expired_type=1`、`expired_at=4102416000000`；159 账号真实转存成功；下载回验 SHA256 与 GitHub 包一致。
+- 百度：159 账号真实转存成功，下载回验两个文件大小与 SHA256 均一致（116,808 B / 33,345 B）。
 - 「永久」只代表当前配置为永久且当前可访问，不代表平台承诺永久保留。复查时重新执行上述两项验证并更新检查日期。
 
 ## 迁移说明
