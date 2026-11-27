@@ -23,7 +23,7 @@ Tag 规范：`<SKILL_ID>-v<VERSION>`，例如 `baidu-baidunetdisk-v1.1.0`。
 
 ```text
 请根据这个直链下载并安装 baidu-baidunetdisk 技能，并自动完成环境检查、依赖准备和安装验证：
-https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.1/packages/baidu-baidunetdisk/v1.2.1/baidu-baidunetdisk-v1.2.1.zip
+https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/baidu-baidunetdisk-v1.2.2/packages/baidu-baidunetdisk/v1.2.2/baidu-baidunetdisk-v1.2.2.zip
 ```
 
 直链模板：
@@ -42,8 +42,8 @@ https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/
 
 | 技能 ID | 版本 | 文件 | 字节数 | 说明 |
 |-|-|-|-|-|
-| `baidu-baidunetdisk` | v1.2.1 | `baidu-baidunetdisk-v1.2.1.zip` | 116,820 | **真实云端保存自检**（159 发布 / 156 保存，包内默认测试资源 + 状态机）；含 rename |
-| `kuake-quarkclouddrive` | v1.1.1 | `kuake-quarkclouddrive-v1.1.1.zip` | 33,356 | **真实云端保存自检**（159 发布永久无码分享 / 156 保存，状态机）；上传/下载/分享/转存 |
+| `baidu-baidunetdisk` | v1.2.2 | `baidu-baidunetdisk-v1.2.2.zip` | 117,190 | **真实云端保存自检**（159 发布 / 156 保存，包内默认测试资源 + 状态机）；含 rename；自检 CLI 路径修复 |
+| `kuake-quarkclouddrive` | v1.1.2 | `kuake-quarkclouddrive-v1.1.2.zip` | 33,780 | **真实云端保存自检**（159 发布永久无码分享 / 156 保存，状态机）；上传/下载/分享/转存；**修复自检 CLI 路径少一级导致借用他人账号的缺陷** |
 | `workbuddy-keep-agent` | v1.0.0 | `workbuddy-keep-agent-v1.0.0.zip` | 16,142 | 技能启动自检模块；与官方技能包隔离，包内零凭据 |
 
 `workbuddy-keep-agent` 是自检模块的**独立分发形态，非必需**。自百度 v1.2.0、夸克 v1.1.0 起，两个技能包已各自内置完整自检，**装技能包即自带，不需要再单独安装本包**。本包仅用于两种情况：在一处统一调度多平台自检，或在不安装技能包的机器上单独跑自检。公开测试资源随技能包分发；本机私有配置与状态固定在 `~/.workbuddy/keep-agent/`，且不再是自检运行的必要条件。
@@ -95,10 +95,12 @@ aa2d079b783ba4412c894ae3ed6529ab94d6337b43469bdc7c04f2f9b3cafeff  kuake-quarkclo
 1e20ae384fb669c7dc6f7baf54e90a5d0b997c0170956d0fe2ee87e97eb36439  kuake-quarkclouddrive-v1.0.4.zip
 2106f1ec075547d905ff2b2cbfd2db4587355691510741b45065f370cfa40d09  kuake-quarkclouddrive-v1.1.0.zip
 9599a3d4670e13e7d1883f6f4ffd88577feb04a3b823a87c19514b36ad520f49  kuake-quarkclouddrive-v1.1.1.zip
+995dc5a6b4f269396c2a412adc3adff5f1e4e169ba9a12bb41c934e00774558f  kuake-quarkclouddrive-v1.1.2.zip
 17f453dce9ce65d440c50acff9cb21c34ae1b0615ab35d4d038cd597c437d933  baidu-baidunetdisk-v1.1.0.zip
 a8b25c9058b226b83fcfd64ead3409fd730e14b9ae209a22f0e23e523aeb3c41  baidu-baidunetdisk-v1.1.1.zip
 3baff825dfa74b10f173ae3baa4531723cbbf584213f25352c126b86ef107b34  baidu-baidunetdisk-v1.2.0.zip
 4fd3553a55ee335042c836c7303ce6fe2e1c9c4c425b116f8c23585132ff7a08  baidu-baidunetdisk-v1.2.1.zip
+35dc5931b83090753eaa59febee9911cd9b537a5489f3cf7d9821e883dfeeb07  baidu-baidunetdisk-v1.2.2.zip
 08c68e12a5196ec01767df7b81717a2e2a97fc6ac8687fd8fb759c7776504f13  workbuddy-keep-agent-v1.0.0.zip
 ```
 
