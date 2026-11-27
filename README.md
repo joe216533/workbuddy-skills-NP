@@ -186,3 +186,16 @@ WorkBuddy 技能平台要求 ZIP ≤3M 且目录最多两级。技能一/二已�
 
 网盘渠道（含两包）：https://pan.quark.cn/s/aee4634caded （永久无码）。
 旧版 v1.1.3 / v1.2.5 保留历史记录、不再分发。以后所有新技能统一执行两级目录限制，构建脚本 `work/build_flat_package.py`。
+
+## 平台完整兼容版（2026-11-28，frontmatter 补齐）
+
+四个技能按 WorkBuddy 平台要求补齐 SKILL.md frontmatter 四字段（display_name / display_name_en / description_zh / description_en），display_name 为中文且同类唯一，并升版本重发：
+
+| 技能 | 版本 | 大小 | SHA256 |
+|-|-|-|-|
+| kuake-quarkclouddrive | v1.1.5 | 34,787 | `cd1a0f1d31732e8545bcfc22f3999adbc87b2182307600292ed06ffa50f962e7` |
+| baidu-baidunetdisk | v1.2.7 | 120,871 | `ef49d8b10cabf831f6a8ff96d30690864cba30bd87ee216db37d1bcb6d787406` |
+| browser-cli-dual-vpn | v1.0.1 | 29,242 | `04d585e0a4cf6e5e2e7df9bbe93b9c5f7aa46a23cfd2df19a179d4e04d484373` |
+| feishu-readwrite | v1.0.1 | 16,365 | `984c656febfb1993f1318d567df461bf73fd36c0df1211c6787f0dc719aadd8c` |
+
+网盘渠道（含四包）：https://pan.quark.cn/s/5011f4efc248 （永久无码）。八条下载链回验一致。
