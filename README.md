@@ -50,6 +50,24 @@ https://cdn.jsdelivr.net/gh/joe216533/workbuddy-skills-NP@<SKILL_ID>-v<VERSION>/
 
 因此**日常只需要装两个技能包**：`baidu-baidunetdisk` 与 `kuake-quarkclouddrive`。
 
+## 发布工具
+
+| 工具 | 版本 | 文件 | 字节 | 适用范围 |
+|-|-|-|-|-|
+| `kuake-release-tools` | v1.0.1 | `kuake-release-tools-v1.0.1.zip` | 14,059 | **仅夸克技能（v1.0.x 旧仓库结构）**，其他技能不可用 |
+
+内容：`release.sh`（一键发布）、`preflight.js`（发布前门禁）、`check-sync.js`（三方一致性检查）、`release-manifest.example.json`、`README.md`。
+
+直链：
+
+```text
+https://raw.githubusercontent.com/joe216533/workbuddy-skills-NP/kuake-release-tools-v1.0.1/tools/kuake-release-tools/v1.0.1/kuake-release-tools-v1.0.1.zip
+```
+
+SHA256：`c7c1fde0c4a762772d88709c72e7091b18c5b146c7807494b58abd35c69ef49b`
+
+> `release.sh` 内部写死了 `SKILL_DIR=kuake-quarkclouddrive`、`REPO=kuake-quarkclouddrive`、`TAG=v{VERSION}`，推的是旧仓库根目录结构。用统一仓库 `packages/{SKILL_ID}/v{VERSION}/` 结构的新技能**不能使用**，须按 00A 12.4 手工发布。
+
 ## 启动自检的接入方式
 
 技能在每天第一次被调用时，先执行一次自检，再执行用户请求：
