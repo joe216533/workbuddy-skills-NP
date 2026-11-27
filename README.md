@@ -174,3 +174,15 @@ GitHub 直链为主渠道，网盘镜像为备用渠道（GitHub 不可达时使
 | 网盘 | https://pan.quark.cn/s/005012dc4c9b （永久无码） |
 
 验收：F1–F8 自检连续两次 PASS；Docs/Base/Sheets 真实新建、读取、更新、改名、回读均通过。详见包内 README.md。
+
+## 平台兼容版（2026-11-28，两级目录）
+
+WorkBuddy 技能平台要求 ZIP ≤3M 且目录最多两级。技能一/二已压平重发：
+
+| 技能 | 版本 | 大小 | SHA256 |
+|-|-|-|-|
+| kuake-quarkclouddrive | v1.1.4 | 34,800 | `1f7da7a06543d4c6696696be1d27c75e88f4c4469df5ca5b6efc9489c1c49b5b` |
+| baidu-baidunetdisk | v1.2.6 | 120,769 | `ebb9971c940e96c4ce2e4a9dff4733122cc676b0bb151e9418018087b493cba6` |
+
+网盘渠道（含两包）：https://pan.quark.cn/s/aee4634caded （永久无码）。
+旧版 v1.1.3 / v1.2.5 保留历史记录、不再分发。以后所有新技能统一执行两级目录限制，构建脚本 `work/build_flat_package.py`。
