@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "authority": "github_release_tag",
+  "note": "机器可读的当前正式版本索引。唯一版本权威是 GitHub 正式发布 Tag；本文件是目录镜像，不是第二权威。00C / README / 安装语言 / 包名均镜像此索引。历史记录不因本文件修改。",
+  "updated_at": "2026-11-28",
+  "skills": {
+    "kuake-quarkclouddrive": {
+      "version": "1.1.5",
+      "tag": "kuake-quarkclouddrive-v1.1.5",
+      "schema_version": 1,
+      "zip": "kuake-quarkclouddrive-v1.1.5.zip"
+    },
+    "baidu-baidunetdisk": {
+      "version": "1.2.7",
+      "tag": "baidu-baidunetdisk-v1.2.7",
+      "schema_version": 1,
+      "zip": "baidu-baidunetdisk-v1.2.7.zip"
+    },
+    "browser-cli-dual-vpn": {
+      "version": "1.0.2",
+      "tag": "browser-cli-dual-vpn-v1.0.2",
+      "schema_version": 2,
+      "zip": "browser-cli-dual-vpn-v1.0.2.zip"
+    },
+    "feishu-readwrite": {
+      "version": "1.0.3",
+      "tag": "feishu-readwrite-v1.0.3",
+      "schema_version": 1,
+      "zip": "feishu-readwrite-v1.0.3.zip"
+    }
+  }
+}
