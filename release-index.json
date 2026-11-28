@@ -2,7 +2,7 @@
   "schema": 1,
   "authority": "github_release_tag",
   "note": "机器可读的当前正式版本索引。唯一版本权威是 GitHub 正式发布 Tag；本文件是目录镜像，不是第二权威。00C / README / 安装语言 / 包名均镜像此索引。历史记录不因本文件修改。",
-  "updated_at": "2026-11-28-vcheck",
+  "updated_at": "2026-11-28-global-check",
   "skills": {
     "kuake-quarkclouddrive": {
       "version": "1.1.6",
@@ -27,6 +27,12 @@
       "tag": "feishu-readwrite-v1.0.4",
       "schema_version": 1,
       "zip": "feishu-readwrite-v1.0.4.zip"
+    },
+    "global-skill-check": {
+      "version": "1.0.0",
+      "tag": "global-skill-check-v1.0.0",
+      "schema_version": 1,
+      "zip": "global-skill-check-v1.0.0.zip"
     }
   }
 }
