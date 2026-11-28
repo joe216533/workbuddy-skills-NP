@@ -223,3 +223,15 @@ v1.0.1 保留历史版本。
 | 网盘 | https://pan.quark.cn/s/579c60593880 |
 
 新增八条 Base 建表与跨表复刻实测坑（字段顺序只能靠创建顺序、field-list 随机序、选项 50 上限分页、主字段强制第一、公式跨表替换表名、删字段无批量、公式列跳过、datetime 写真时间），技能描述已写全。本机 F1–F8 PASS；平台版边界同 v1.0.2。
+
+## browser-cli-dual-vpn v1.0.2（按需双实例版）
+
+| 项 | 值 |
+|-|-|
+| 包 | 35,258 B |
+| SHA256 | `748b058cca39447ff287d5cc7de864276ef4cfa3127fa9bde99a3e60d64ad527` |
+| 网盘 | https://pan.quark.cn/s/862bcb65d3b2 |
+
+变更：固定三窗 → 按需双实例（vpn/direct 最多 2、同出口复用）；严格域名路由 + 未知域名拦截；PID 身份核验 down（身份不符 SAFETY BLOCK）；夸克渠道按登录身份决策（159 直接 download、其他账号 saveas、未登录走 GitHub）。自检 PASS：0→VPN→DIRECT→2、第三个被拒、退出码 0。
+
+升级规则见 00A 第20节；三个旧 Profile 全部保留，旧 state 备份后重建 schema 2 空实例池。
