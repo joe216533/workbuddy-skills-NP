@@ -1,38 +1,53 @@
 {
-  "schema": 1,
+  "schema_version": "1.0",
   "authority": "github_release_tag",
-  "note": "机器可读的当前正式版本索引。唯一版本权威是 GitHub 正式发布 Tag；本文件是目录镜像，不是第二权威。00C / README / 安装语言 / 包名均镜像此索引。历史记录不因本文件修改。",
-  "updated_at": "2026-11-28-global-check",
-  "skills": {
-    "kuake-quarkclouddrive": {
+  "note": "机器可读版本与哈希索引。唯一版本权威是 GitHub 正式 Tag；sha256 为最终发布 ZIP 哈希，checksums_sha256 为包内文件清单哈希。禁止占位。",
+  "updated_at": "2026-11-28-v3-hash",
+  "skills": [
+    {
+      "id": "kuake-quarkclouddrive",
       "version": "1.1.6",
       "tag": "kuake-quarkclouddrive-v1.1.6",
-      "schema_version": 1,
-      "zip": "kuake-quarkclouddrive-v1.1.6.zip"
+      "package": "packages/kuake-quarkclouddrive/v1.1.6/kuake-quarkclouddrive-v1.1.6.zip",
+      "sha256": "3652d0bc1edeb7fc91c6d390b7efe80df09036f058ebaa33f26c97cd23671d34",
+      "checksums_file": "checksums.sha256",
+      "checksums_sha256": "a25f492a42d3b11e82bf934e36524c9c63f718e85a51f04df988cbcfc009a7da"
     },
-    "baidu-baidunetdisk": {
+    {
+      "id": "baidu-baidunetdisk",
       "version": "1.2.8",
       "tag": "baidu-baidunetdisk-v1.2.8",
-      "schema_version": 1,
-      "zip": "baidu-baidunetdisk-v1.2.8.zip"
+      "package": "packages/baidu-baidunetdisk/v1.2.8/baidu-baidunetdisk-v1.2.8.zip",
+      "sha256": "67ccc0afb5441ab123bad3c83974e48d4800cacc014dd0d9492c5497ff0d21b8",
+      "checksums_file": "checksums.sha256",
+      "checksums_sha256": "6b05bedc81c196748d4b5b44b6f506071e70bef11f9713a2ae63f591036b57a2"
     },
-    "browser-cli-dual-vpn": {
+    {
+      "id": "browser-cli-dual-vpn",
       "version": "1.0.4",
       "tag": "browser-cli-dual-vpn-v1.0.4",
-      "schema_version": 2,
-      "zip": "browser-cli-dual-vpn-v1.0.4.zip"
+      "package": "packages/browser-cli-dual-vpn/v1.0.4/browser-cli-dual-vpn-v1.0.4.zip",
+      "sha256": "6394cd2d467f33814d5eff1124dddd102c3a5211012723084394bde44c3baf6d",
+      "checksums_file": "checksums.sha256",
+      "checksums_sha256": "113fd949fec1e1522a800f0accaf5436be73fc1a318ab651d5e19dc80953b34e"
     },
-    "feishu-readwrite": {
+    {
+      "id": "feishu-readwrite",
       "version": "1.0.4",
       "tag": "feishu-readwrite-v1.0.4",
-      "schema_version": 1,
-      "zip": "feishu-readwrite-v1.0.4.zip"
+      "package": "packages/feishu-readwrite/v1.0.4/feishu-readwrite-v1.0.4.zip",
+      "sha256": "b979ba0609567cd9473890896478c9748d379400836cc6d0b3cb1f7cf279bae5",
+      "checksums_file": "checksums.sha256",
+      "checksums_sha256": "64eadb6405ff70ab740965282b61cd3c7f8e6e01a026314438d9f56ccc2113bd"
     },
-    "global-skill-check": {
+    {
+      "id": "global-skill-check",
       "version": "1.0.0",
       "tag": "global-skill-check-v1.0.0",
-      "schema_version": 1,
-      "zip": "global-skill-check-v1.0.0.zip"
+      "package": "packages/global-skill-check/v1.0.0/global-skill-check-v1.0.0.zip",
+      "sha256": "dcd2483346c4e5703c304c1bb7ef80c94e88bb035625b201cbc4727cfaf1a83c",
+      "checksums_file": "checksums.sha256",
+      "checksums_sha256": "f294e775dc2d6d7feca5d4b52ec2ee3b9113424ad75dc5eea2f3d3273abd1ad0"
     }
-  }
+  ]
 }
