@@ -245,3 +245,20 @@ v1.0.1 保留历史版本。
 - 升级六步：备份 → 干净目录构建 → 白名单迁移 → 验证 → 原子切换 → 失败回滚（00A 第20节）
 
 四个技能安装语言均已补首次安装/旧版升级双分支。本机实测：夸克实际安装 v1.1.3，落后于发布版 v1.1.5，说明版本检查确有必要。
+
+## 只读版本检查器上线（2026-11-28）
+
+四技能全部内置 `scripts/check-version.js`，按 00A 第21节以 GitHub 正式 Tag 为唯一版本权威：
+
+| 技能 | 版本 | SHA256 |
+|-|-|-|
+| kuake-quarkclouddrive | v1.1.6 | `b5e7b071f7018bb7318c5fed9ffa1a8710782861cacc96df1682f0ec983f5d9d` |
+| baidu-baidunetdisk | v1.2.8 | `d8fa040fa7b129e2b431a1066fcad1e1ce0b8164268415d81048ccddd7814c0f` |
+| browser-cli-dual-vpn | v1.0.3 | `3efb464ca516fd2408853c6c760093b42cf09baabd7099d6b71c116c265e83db` |
+| feishu-readwrite | v1.0.4 | `958a993e270a3f5bdc1dee0fc2f6bb1012743c33f529360f44337513bfa835a8` |
+
+网盘（含四包）：https://pan.quark.cn/s/66f561e6fb3f 。八链回验一致。
+
+检查器纯只读：不改文件、不下载、不启动 VPN、不改代理；支持离线；退出码 0/1/2/3/4。实测正确识别本机夸克 v1.1.3 落后于 v1.1.5。
+
+版本索引 `release-index.json`（仓库根目录）是机器可读目录镜像，非第二权威；权威始终是 GitHub 正式 Tag。
