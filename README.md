@@ -213,3 +213,13 @@ WorkBuddy 平台评测驳回：平台隔离环境未预装 lark-cli、无飞书�
 | WorkBuddy 平台版 | 【未通过，暂不支持】需平台提供飞书连接器/MCP/受控 API |
 
 v1.0.1 保留历史版本。
+
+## feishu-readwrite v1.0.3（Base 建表增强版）
+
+| 项 | 值 |
+|-|-|
+| 包 | feishu-readwrite-v1.0.3.zip（21,200 B） |
+| SHA256 | `14b6a74a0c6e42330e0dd3e76b14d0352b3edd7285cf209d908c8a0d805d1abc` |
+| 网盘 | https://pan.quark.cn/s/579c60593880 |
+
+新增八条 Base 建表与跨表复刻实测坑（字段顺序只能靠创建顺序、field-list 随机序、选项 50 上限分页、主字段强制第一、公式跨表替换表名、删字段无批量、公式列跳过、datetime 写真时间），技能描述已写全。本机 F1–F8 PASS；平台版边界同 v1.0.2。
