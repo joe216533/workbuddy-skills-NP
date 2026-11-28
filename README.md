@@ -199,3 +199,17 @@ WorkBuddy 技能平台要求 ZIP ≤3M 且目录最多两级。技能一/二已�
 | feishu-readwrite | v1.0.1 | 16,365 | `984c656febfb1993f1318d567df461bf73fd36c0df1211c6787f0dc719aadd8c` |
 
 网盘渠道（含四包）：https://pan.quark.cn/s/5011f4efc248 （永久无码）。八条下载链回验一致。
+
+## feishu-readwrite v1.0.2（规则修复版，平台边界已标注）
+
+WorkBuddy 平台评测驳回：平台隔离环境未预装 lark-cli、无飞书授权，而 @larksuite/cli 包 49M 超 3M 限制无法内置。按 GPT 裁决：撤回平台版宣称、保留本机版；修复两项规则缺陷（批量修改显式授权放行、后端不可用禁完成态表述 + 受阻报告模板）。
+
+| 项 | 值 |
+|-|-|
+| 包 | feishu-readwrite-v1.0.2.zip（19,233 B） |
+| SHA256 | `40245ab0f8330ec5d0679d0550febd50181aa205c01c70fc1eda8ca3550a8056` |
+| 网盘 | https://pan.quark.cn/s/02cd9b025082 |
+| 本机版 | 【已验证】F1–F8 PASS |
+| WorkBuddy 平台版 | 【未通过，暂不支持】需平台提供飞书连接器/MCP/受控 API |
+
+v1.0.1 保留历史版本。
